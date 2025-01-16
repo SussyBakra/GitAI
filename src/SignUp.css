@@ -1,0 +1,278 @@
+/* Font Faces */
+@font-face {
+    font-family: 'FontLight';
+    src: url('./assets/Font Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'FontBold';
+    src: url('./assets/Font Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'FontMedium';
+    src: url('./assets/Font Medium.otf') format('opentype');
+}
+
+/* Global Styles */
+body {
+    font-family: 'FontLight', Arial, sans-serif;
+    color: white;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+img.logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 300px;
+    height: auto;
+}
+
+h2, h3 {
+    font-family: 'FontBold';
+    margin-bottom: 15px;
+}
+
+.divider {
+    height: 1px;
+    background: white;
+    margin: 15px auto;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 0;
+    width: 100%;
+    margin: 15px 0;
+    cursor: pointer;
+    font-family: 'FontMedium';
+}
+
+.btn-primary {
+    background-color: #3b5998;
+}
+
+.btn-secondary {
+    background-color: gray;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.04);
+}
+
+form {
+    text-align: left;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    margin: 8px 0 4px;
+    font-family: 'FontMedium';
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    background-color: rgba(32, 32, 32, 0.8);
+    color: white;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.submit-btn {
+    background-color: orange;
+    color: white;
+    font-family: 'FontBold';
+    font-weight: bold;
+    padding: 10px 0;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background-color: darkorange;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.popup button {
+    margin-top: 15px;
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'FontBold';
+}
+
+.popup button:hover {
+    background-color: darkorange;
+}
+
+/* Add these additional styles for signup-specific elements */
+.privacy-policy {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 15px;
+}
+
+.dark-mode .privacy-policy {
+  color: #aaa;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  padding: 3px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.auth-links{
+    margin-top: 12px;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+/* .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+} */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 65vh;
+    padding: 25px 20px;
+    max-width: 450px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container > h2 {
+    margin: 0 0 20px 0;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 0;
+    color: rgb(61, 225, 46);
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+/* Add consistent focus styles */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(61, 225, 46, 0.5);
+}
+
+/* Style placeholder text */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Ensure the container's parent has proper positioning */
+#root {
+    position: relative;
+    min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

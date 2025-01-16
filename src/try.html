@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up - GitAI</title>
+    <style>
+        /* Font Faces */
+        @font-face {
+            font-family: 'FontLight';
+            src: url('Font Light.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'FontBold';
+            src: url('Font Bold.otf') format('opentype');
+        }
+
+        @font-face {
+            font-family: 'FontMedium';
+            src: url('Font Medium.otf') format('opentype');
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'FontLight', Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Background Video */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            margin-top: 50px;
+            position: relative; /* To ensure it sits over the video */
+            z-index: 1;
+        }
+
+        img.logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 300px;
+            height: auto;
+        }
+
+        h2, h3 {
+            font-family: 'FontBold';
+            margin-bottom: 15px;
+        }
+
+        .divider {
+            height: 1px;
+            background: white;
+            margin: 15px auto;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 0;
+            width: 100%;
+            margin: 15px 0;
+            cursor: pointer;
+            font-family: 'FontMedium';
+        }
+
+        .btn-primary {
+            background-color: #3b5998;
+        }
+
+        .btn-secondary {
+            background-color: gray;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: black;
+            transform: scale(1.04);
+        }
+
+        form {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-family: 'FontMedium';
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            background-color: orange;
+            color: white;
+            font-family: 'FontBold';
+            font-weight: bold;
+            padding: 10px 0;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: darkorange;
+        }
+
+        a {
+            color: orange;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 10;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .popup button {
+            margin-top: 15px;
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'FontBold';
+        }
+
+        .popup button:hover {
+            background-color: darkorange;
+        }
+
+        /* Background dimming effect */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 5;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+        <source src="bkg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Popup -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <p>Property of Abdul Hanan, Adeen Illyas, Talha Asghar</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <div class="container">
+        <!-- Logo -->
+        <img src="logo-light.png" alt="GitAI Logo" class="logo">
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Heading -->
+        <h2 style="margin-top: 70px;">Sign Up Today for Free</h2>
+        <div class="divider"></div>
+
+        <!-- Social Buttons -->
+        <button class="btn btn-secondary">
+            <img src="Google White logo.png" alt="Google" width="20" style="margin-right: 10px;">
+            Sign Up with Google
+        </button>
+
+        <!-- Divider -->
+        <h3>Or</h3>
+
+        <!-- Form -->
+        <p>Sign up with your email address</p>
+        <form action="/action_page.php">
+            <label for="email">Enter your email address:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Create a new password:</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" minlength="8" required>
+
+            <label for="birthday">Enter your date of birth:</label>
+            <input type="date" id="birthday" name="birthday" required>
+
+            <label>
+                <input type="checkbox" name="terms" required>
+                I agree to the Terms and Privacy Policy
+            </label>
+
+            <p>Learn more about our <a onclick="showPopup()">Privacy Policy</a>.</p>
+
+            <button class="submit-btn" type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
